@@ -34,6 +34,7 @@ public slots:
     void opMult();
     void opDiv();
     void apagar();
+    void resultadof();
 
 
 

@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->botaoDiv, &QPushButton::clicked,this, &MainWindow::opDiv);
     connect(ui->botaoMult, &QPushButton::clicked,this, &MainWindow::opMult);
     connect(ui->botaoAC, &QPushButton::clicked,this, &MainWindow::apagar);
+     connect(ui->botaoIgual, &QPushButton::clicked,this, &MainWindow::resultadof);
 
 }
 
@@ -42,29 +43,6 @@ void MainWindow::add1()
         tvalor2+='1';
         string textoDaTela = tvalor1 +' '+ operacao+' ' +tvalor2;
         ui->lineEdit->setText(QString::fromStdString(textoDaTela));
-    }else
-    {
-       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
-       // o atoi converte o char para int
-       valor2=atoi(tvalor2.c_str());
-       if(operacao=="+")
-       {
-           resultado=valor1+valor2;
-       }else if(operacao=="-")
-       {
-           resultado=valor1-valor2;
-       }else if(operacao=="/")
-       {
-           resultado=valor1/valor2;
-       }else if(operacao=="*")
-       {
-           resultado=valor1*valor2;
-       }
-
-       tresultado=to_string(resultado);
-       ui->lineEdit->setText(QString::fromStdString(tresultado));
-       tvalor1=tresultado;
-       tvalor2="";
     }
 
 }
@@ -188,22 +166,130 @@ void MainWindow::add0()
 
 void MainWindow::opAdi()
 {
-    operacao="+";
+    if(operacao==""||tvalor2=="")
+    {
+        operacao="+";
+    }else
+    {
+       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+       // o atoi converte o char para int
+       valor2=atoi(tvalor2.c_str());
+       if(operacao=="+")
+       {
+           resultado=valor1+valor2;
+       }else if(operacao=="-")
+       {
+           resultado=valor1-valor2;
+       }else if(operacao=="/")
+       {
+           resultado=valor1/valor2;
+       }else if(operacao=="*")
+       {
+           resultado=valor1*valor2;
+       }
+
+       tresultado=to_string(resultado);
+       ui->lineEdit->setText(QString::fromStdString(tresultado));
+       tvalor1=tresultado;
+       tvalor2="";
+       operacao="+";
+    }
 }
 
 void MainWindow::opSub()
 {
-    operacao="-";
+    if(operacao==""||tvalor2=="")
+    {
+        operacao="-";
+    }else
+    {
+       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+       // o atoi converte o char para int
+       valor2=atoi(tvalor2.c_str());
+       if(operacao=="+")
+       {
+           resultado=valor1+valor2;
+       }else if(operacao=="-")
+       {
+           resultado=valor1-valor2;
+       }else if(operacao=="/")
+       {
+           resultado=valor1/valor2;
+       }else if(operacao=="*")
+       {
+           resultado=valor1*valor2;
+       }
+
+       tresultado=to_string(resultado);
+       ui->lineEdit->setText(QString::fromStdString(tresultado));
+       tvalor1=tresultado;
+       tvalor2="";
+       operacao="-";
+    }
 }
 
 void MainWindow::opMult()
 {
-    operacao="*";
+    if(operacao==""||tvalor2=="")
+    {
+        operacao="*";
+    }else
+    {
+       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+       // o atoi converte o char para int
+       valor2=atoi(tvalor2.c_str());
+       if(operacao=="+")
+       {
+           resultado=valor1+valor2;
+       }else if(operacao=="-")
+       {
+           resultado=valor1-valor2;
+       }else if(operacao=="/")
+       {
+           resultado=valor1/valor2;
+       }else if(operacao=="*")
+       {
+           resultado=valor1*valor2;
+       }
+
+       tresultado=to_string(resultado);
+       ui->lineEdit->setText(QString::fromStdString(tresultado));
+       tvalor1=tresultado;
+       tvalor2="";
+       operacao="*";
+    }
 }
 
 void MainWindow::opDiv()
 {
-    operacao="/";
+    if(operacao==""||tvalor2=="")
+    {
+        operacao="/";
+    }else
+    {
+       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+       // o atoi converte o char para int
+       valor2=atoi(tvalor2.c_str());
+       if(operacao=="+")
+       {
+           resultado=valor1+valor2;
+       }else if(operacao=="-")
+       {
+           resultado=valor1-valor2;
+       }else if(operacao=="/")
+       {
+           resultado=valor1/valor2;
+       }else if(operacao=="*")
+       {
+           resultado=valor1*valor2;
+       }
+
+       tresultado=to_string(resultado);
+       ui->lineEdit->setText(QString::fromStdString(tresultado));
+       tvalor1=tresultado;
+       tvalor2="";
+       operacao="/";
+    }
 }
 
 void MainWindow::apagar()
@@ -212,5 +298,31 @@ void MainWindow::apagar()
     tvalor1="";
     tvalor2="";
     ui->lineEdit->setText("");
+}
+
+void MainWindow::resultadof()
+{
+    valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+    // o atoi converte o char para int
+    valor2=atoi(tvalor2.c_str());
+    if(operacao=="+")
+    {
+        resultado=valor1+valor2;
+    }else if(operacao=="-")
+    {
+        resultado=valor1-valor2;
+    }else if(operacao=="/")
+    {
+        resultado=valor1/valor2;
+    }else if(operacao=="*")
+    {
+        resultado=valor1*valor2;
+    }
+
+    tresultado=to_string(resultado);
+    ui->lineEdit->setText(QString::fromStdString(tresultado));
+    tvalor1=tresultado;
+    tvalor2="";
+
 }
 

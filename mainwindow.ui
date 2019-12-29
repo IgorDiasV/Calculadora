@@ -138,7 +138,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_14">
+           <widget class="QPushButton" name="botaoIgual">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>2</horstretch>
