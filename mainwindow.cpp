@@ -42,6 +42,29 @@ void MainWindow::add1()
         tvalor2+='1';
         string textoDaTela = tvalor1 +' '+ operacao+' ' +tvalor2;
         ui->lineEdit->setText(QString::fromStdString(textoDaTela));
+    }else
+    {
+       valor1=atoi(tvalor1.c_str());//.c_str converte a string para char
+       // o atoi converte o char para int
+       valor2=atoi(tvalor2.c_str());
+       if(operacao=="+")
+       {
+           resultado=valor1+valor2;
+       }else if(operacao=="-")
+       {
+           resultado=valor1-valor2;
+       }else if(operacao=="/")
+       {
+           resultado=valor1/valor2;
+       }else if(operacao=="*")
+       {
+           resultado=valor1*valor2;
+       }
+
+       tresultado=to_string(resultado);
+       ui->lineEdit->setText(QString::fromStdString(tresultado));
+       tvalor1=tresultado;
+       tvalor2="";
     }
 
 }

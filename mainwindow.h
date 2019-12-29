@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
 
 public:
     int valor1,valor2,resultado;
-    string tvalor1,tvalor2,tresultato;
+    string tvalor1,tvalor2,tresultado;
     string operacao="";
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
